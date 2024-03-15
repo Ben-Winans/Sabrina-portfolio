@@ -1,0 +1,127 @@
+.scrollContainer {
+    height: 300vh; /* Adjust based on total scroll length you desire */
+    width: 100vw;
+    position: relative;
+
+    z-index: -2;
+    perspective: 10px;
+}
+
+.homeSection {
+    position: sticky;
+    top: 0; /* This will "stick" the section to the top */
+    height: 50vh; /* Adjust this if you want a different height */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+    background-color: #6dd5ed; /* Initial sky blue */
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: cover;
+    animation: colorShift linear;
+    animation-timeline: view();
+}
+
+.title {
+    /* This will center the title in the middle of the container */
+    text-align: center;
+    z-index: 0;
+}
+
+.sun {
+    position: absolute;
+    top: 100vh; /* Start in the middle of the container vertically */
+    right: 50%; /* Start on the right of the container */
+    width: 100px; /* Sun size */
+    height: 100px; /* Sun size */
+    background-color: yellow; /* Sun color */
+    border-radius: 50%; /* Makes the div a circle */
+    animation: rot linear;
+    animation-timeline: view();
+}
+
+.cloud_foreground {
+    position: absolute;
+    top: 53%;
+    right: 0;
+    width: 75px;
+    height: 75px; 
+    background-color: white;
+    z-index: 1;
+    animation: moveForeground 42s linear infinite; /* Apply the animation here */
+}
+
+.cloud_background {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 75px;
+    height: 75px; 
+    background-color: green;
+    z-index: -1;
+    animation: moveBackground 60s linear infinite; /* Apply the animation here */
+}
+
+@keyframes moveForeground {
+    from {
+        right: -50px; /* Start off-screen to the right */
+    }
+    to {
+        right: 100vw; /* Move across to the left, off-screen */
+    }
+}
+
+@keyframes moveBackground {
+    from {
+        left: -50px; /* Start off-screen to the left */
+    }
+    to {
+        left: 100vw; /* Move across to the right, off-screen */
+    }
+}
+
+@keyframes rot {
+	from {
+		transform: rotate(-45deg)
+		           translate(48vw)
+		           rotate(45deg);
+	}
+	to {
+		transform: rotate(-200deg)
+		           translate(48vw) 
+		           rotate(200deg);
+	}
+}
+
+@keyframes colorShift {
+    0% {
+        background-color: #FFA243; /* Sky blue */
+    }
+    20%{
+        background-color: #FFA243; /* Sky blue */
+    }
+    40% {
+        background-color: #5bbce3; /* Sky blue */
+    }
+    60% {
+        background-color: #2faadc; /* Sky blue */
+    }
+    70% {
+        background-color: #ffd497; /* Sunset orange */
+    }
+    80% {
+        background-color: #fba58b; /* Sunset orange */
+    }
+    100% {
+      background-color: #fb918f; /* Sunset orange */
+    }
+  }
+
+.spacing{
+    height: 100vh;
+    z-index: 1;
+    background-color: #0066cc;
+}
+

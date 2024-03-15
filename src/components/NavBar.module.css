@@ -1,0 +1,144 @@
+.hamburger {
+    display: none; 
+    cursor: pointer; 
+    align-self: center; 
+}
+
+.hamburgerImg {
+    width: 40px; 
+    height: 40px; 
+}
+
+.navDropDown {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    right: 0px; 
+    background-color: #EDE0D4; 
+    padding: 25px 25px;
+    width: auto; 
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25); 
+    z-index: 5; 
+    margin-top: 0;
+}
+
+.navbar {
+    background-color: #EDE0D4;
+    display: flex;
+    height: 75px;
+    padding: 0px 150px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    z-index: 4; 
+
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto; 
+    align-self: stretch;
+    color: #1E1E1E;
+    flex-shrink: 0; 
+    white-space: nowrap; 
+}
+
+.navList {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    width: 520px; 
+    padding: 0;
+    flex-shrink: 1;  
+}
+
+.navItem {
+    margin-left: 20px;
+}
+
+.navItem a {
+    position: relative;
+    color: #1E1E1E;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navItem a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 0;
+    height: 2px; 
+    background-color: rgb(0, 0, 0); 
+    transition: width 0.3s;
+}
+
+.navItem a:hover::after {
+    width: 100%;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    background-color: #EDE0D4; 
+    width: auto; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    z-index: 5; 
+}
+
+@media screen and (max-width: 912px) {
+    .hamburger {
+        display: block; 
+    }
+
+    .navDropDown {
+        display: flex; 
+    }
+
+    .navList{
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 50px; 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        height: 80px; 
+        padding: 0 20px; 
+    }
+
+    .navDropDown {
+        font-size: 16px; 
+        padding: 15px 15px; 
+    }
+
+    .navItem {
+        margin-left: 10px; 
+    }
+
+    .hamburgerImg {
+        width: 30px; 
+        height: 30px;
+    }
+
+}
