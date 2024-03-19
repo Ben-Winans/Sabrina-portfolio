@@ -1,8 +1,9 @@
 .scrollContainer {
-    height: 300vh; /* Adjust based on total scroll length you desire */
+    height: 400vh; /* Adjust based on total scroll length you desire */
     width: 100vw;
     position: relative;
     z-index: -2;
+    background-color: #2373cf;
     perspective: 10px;
 }
 
@@ -16,11 +17,21 @@
     align-items: center;
     flex-direction: column;
     z-index: -1;
-    background-color: #6dd5ed; /* Initial sky blue */
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-    background-size: cover;
-    animation: colorShift linear;
-    animation-timeline: view();
+    background-image: linear-gradient(45deg,
+    #ee5d6c,
+    #fb9062,
+    #fb9062,
+    #eeaf61,
+    #eeaf61,
+    #44b7fc,
+    #099ffc,
+    #5cccfc
+
+    );
+    background-size: 500%;
+    background-position: left;
+    animation: backgroundShift linear;
+    animation-timeline: view(100vh 50vh);
     overflow: clip;
 }
 
@@ -42,28 +53,12 @@
     text-shadow: 0 0 5px black;
 }
 
-@keyframes colorShift {
-    0% {
-        background-color: #FFA243; /* Sky blue */
-    }
-    20%{
-        background-color: #FFA243; /* Sky blue */
-    }
-    40% {
-        background-color: #5bbce3; /* Sky blue */
-    }
-    60% {
-        background-color: #2faadc; /* Sky blue */
-    }
-    70% {
-        background-color: #ffd497; /* Sunset orange */
-    }
-    80% {
-        background-color: #fba58b; /* Sunset orange */
-    }
-    100% {
-      background-color: #fb918f; /* Sunset orange */
-    }
+
+@keyframes backgroundShift {
+    0% {background-position: left;}
+    25% {background-position: right;}
+    75% {background-position: right;}
+    100% {background-position: left;}
   }
 
 .spacing{

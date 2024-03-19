@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Home.module.css';
 import Sun from '../atoms/Sun.jsx';
 import Clouds from '../atoms/Clouds.jsx';
+import Waves from '../atoms/Waves.jsx';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                         <Sun />
                         <Clouds />
                     </div>
+                    <Waves />
                 </section>
             </div>
             <div className={styles.spacing}>

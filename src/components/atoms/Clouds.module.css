@@ -6,7 +6,7 @@
     height: 75px; 
     background-color: white;
     z-index: 1;
-    animation: moveForeground 42s linear infinite;
+    animation: moveForeground 20s linear infinite;
 }
 
 .cloud_background {
@@ -15,9 +15,9 @@
     left: 0;
     width: 75px;
     height: 75px; 
-    background-color: green; /* Consider adjusting the color to match your design */
+    background-color: green; 
     z-index: -1;
-    animation: moveBackground 60s linear infinite;
+    animation: moveBackground 15s linear infinite;
 }
 
 @keyframes moveForeground {
