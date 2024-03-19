@@ -1,0 +1,61 @@
+.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px; /* set horizontal center of the sun along the right of the container*/
+    height: 0px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Prevents the container from blocking interaction with elements beneath it */
+    animation: moveUpDown 10s linear;
+    animation-timeline: view(100vh 50vh);
+    z-index: 0; /* Ensure it's above other content, adjust as needed */
+}
+
+.sunRay {
+    position: absolute;
+    width: 1000px; 
+    height: 1000px; 
+    border-radius: 50%; 
+    filter: blur(2px);
+    background-image: repeating-conic-gradient(
+        rgba(238, 238, 238, 0.5) 0deg, 
+        rgba(238, 238, 238, 0.5) 3deg, 
+        transparent 3deg, transparent 9deg);
+    mix-blend-mode: lighten; 
+    animation: rotateSmoothly 10s linear;
+    animation-timeline: view();
+    z-index: -1;
+}
+.sun {
+    position: absolute;
+    width: 100px; 
+    height: 100px; 
+    background-color: yellow; 
+    border-radius: 50%; 
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-40vh); /* Move up */
+    }
+    50% {
+        transform: translateY(-40vh); /* Stay at the peak */
+    }
+    75% {
+        transform: translateY(-40vh); /* Start moving back down */
+    }
+}
+
+@keyframes rotateSmoothly {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

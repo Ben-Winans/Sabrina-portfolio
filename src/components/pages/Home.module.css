@@ -2,7 +2,6 @@
     height: 300vh; /* Adjust based on total scroll length you desire */
     width: 100vw;
     position: relative;
-
     z-index: -2;
     perspective: 10px;
 }
@@ -22,77 +21,25 @@
     background-size: cover;
     animation: colorShift linear;
     animation-timeline: view();
+    overflow: clip;
+}
+
+.positioningWrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%; /* Full width of the homeSection */
+    height: 100%; /* Full height of the homeSection */
+    display: flex;
+    justify-content: flex-end; /* Align children to the right */
+    align-items: flex-end; /* Align children to the bottom */
 }
 
 .title {
     /* This will center the title in the middle of the container */
     text-align: center;
-    z-index: 0;
-}
-
-.sun {
-    position: absolute;
-    top: 100vh; /* Start in the middle of the container vertically */
-    right: 50%; /* Start on the right of the container */
-    width: 100px; /* Sun size */
-    height: 100px; /* Sun size */
-    background-color: yellow; /* Sun color */
-    border-radius: 50%; /* Makes the div a circle */
-    animation: rot linear;
-    animation-timeline: view();
-}
-
-.cloud_foreground {
-    position: absolute;
-    top: 53%;
-    right: 0;
-    width: 75px;
-    height: 75px; 
-    background-color: white;
-    z-index: 1;
-    animation: moveForeground 42s linear infinite; /* Apply the animation here */
-}
-
-.cloud_background {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    width: 75px;
-    height: 75px; 
-    background-color: green;
-    z-index: -1;
-    animation: moveBackground 60s linear infinite; /* Apply the animation here */
-}
-
-@keyframes moveForeground {
-    from {
-        right: -50px; /* Start off-screen to the right */
-    }
-    to {
-        right: 100vw; /* Move across to the left, off-screen */
-    }
-}
-
-@keyframes moveBackground {
-    from {
-        left: -50px; /* Start off-screen to the left */
-    }
-    to {
-        left: 100vw; /* Move across to the right, off-screen */
-    }
-}
-
-@keyframes rot {
-	from {
-		transform: rotate(-45deg)
-		           translate(48vw)
-		           rotate(45deg);
-	}
-	to {
-		transform: rotate(-200deg)
-		           translate(48vw) 
-		           rotate(200deg);
-	}
+    z-index: 2;
+    text-shadow: 0 0 5px black;
 }
 
 @keyframes colorShift {

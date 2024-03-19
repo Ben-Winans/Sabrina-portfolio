@@ -1,0 +1,39 @@
+.cloud_foreground {
+    position: absolute;
+    top: 53%;
+    right: 0;
+    width: 75px;
+    height: 75px; 
+    background-color: white;
+    z-index: 1;
+    animation: moveForeground 42s linear infinite;
+}
+
+.cloud_background {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 75px;
+    height: 75px; 
+    background-color: green; /* Consider adjusting the color to match your design */
+    z-index: -1;
+    animation: moveBackground 60s linear infinite;
+}
+
+@keyframes moveForeground {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100vw;
+    }
+}
+
+@keyframes moveBackground {
+    from {
+        left: -50px;
+    }
+    to {
+        left: 100vw;
+    }
+}
