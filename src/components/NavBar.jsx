@@ -26,7 +26,9 @@ const NavBar = () => {
     return (
         <nav className={styles.navbar} ref={navRef}>
             <div className={styles.logo}>
-                Sabrina Castellanos
+                <p className={styles.logoText}>
+                    Sabrina Castellanos
+                </p>
             </div>
             <ul className={`${isMenuOpen ? styles.navDropDown : styles.navList}`}>
                 <li className={styles.navItem}><a href="#about">About</a></li>

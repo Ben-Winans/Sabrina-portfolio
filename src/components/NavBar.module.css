@@ -2,6 +2,11 @@
     display: none; 
     cursor: pointer; 
     align-self: center; 
+    background-color: rgba(200, 200, 200, 0.5); 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 50px;
 }
 
 .hamburgerImg {
@@ -15,7 +20,7 @@
     position: absolute;
     top: 100%; 
     right: 0px; 
-    background-color: #EDE0D4; 
+    background-color: transparent; 
     padding: 25px 25px;
     width: auto; 
     list-style: none;
@@ -51,8 +56,20 @@
     flex: 1 0 auto; 
     align-self: stretch;
     color: #1E1E1E;
+    text-shadow: 0 0 2px white;
     flex-shrink: 0; 
     white-space: nowrap; 
+
+}
+
+.logoText{
+    margin-right:auto;
+    background-color: rgba(200, 200, 200, 0.5); 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 50px;
 }
 
 .navList {
@@ -61,12 +78,16 @@
     align-items: flex-start;
     list-style: none;
     width: 520px; 
-    padding: 0;
+    padding: 10px;
+    padding-right: 25px;
     flex-shrink: 1;  
+    background-color: rgba(200, 200, 200, 0.5); 
+    border-radius: 50px;
 }
 
 .navItem {
     margin-left: 20px;
+    text-shadow: 0 0 2px white;
 }
 
 .navItem a {
@@ -97,7 +118,7 @@
     position: absolute;
     top: 100%; 
     right: 0; 
-    background-color: #EDE0D4; 
+    background-color: transparent; 
     width: auto; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     z-index: 5; 

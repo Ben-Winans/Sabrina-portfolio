@@ -9,8 +9,8 @@
 
 .homeSection {
     position: sticky;
-    top: 0; /* This will "stick" the section to the top */
-    height: 50vh; /* Adjust this if you want a different height */
+    top: 0; 
+    height: 50vh; 
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -53,6 +53,12 @@
     text-shadow: 0 0 5px black;
 }
 
+.bubbleContainer{
+    position: sticky;
+    height: 50vh;
+    width: 100vw;
+    overflow: show;
+}
 
 @keyframes backgroundShift {
     0% {background-position: left;}
